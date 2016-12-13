@@ -1,4 +1,5 @@
 ﻿using Auth.Management;
+using Auth.Management.Entities;
 using Auth.Management.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -30,6 +31,45 @@ namespace Auth.Management
         {
             IdentityUser user = await _userManager.FindAsync(userName, password);
             return user;
+        }
+        public Client FindClient(string clientId)
+        {
+           return _ctx.Clients.Find(clientId);
+        }
+        public async Task<bool> AddRefreshToken(RefreshToken token)
+        {
+            var existingToken = _ctx.RefreshTokens.Where(r => r.Subject == token.Subject
+            && r.ClientId == token.ClientId).SingleOrDefault();
+            if (existingToken != null)
+            {
+                var result = await RemoveRefreshToken(existingToken);
+            }
+            _ctx.RefreshTokens.Add(token);
+            return await _ctx.SaveChangesAsync() > 0;
+        }
+        public async Task<bool> RemoveRefreshToken(string refreshTokenId)
+        {
+            var refreshToken = await _ctx.RefreshTokens.FindAsync(refreshTokenId);
+            if (refreshToken != null)
+            {
+                _ctx.RefreshTokens.Remove(refreshToken);
+                return await _ctx.SaveChangesAsync() > 0;
+            }
+            return false;
+        }
+        public async Task<bool> RemoveRefreshToken(RefreshToken refreshToken)
+        {
+            _ctx.RefreshTokens.Remove(refreshToken);
+            return await _ctx.SaveChangesAsync() > 0;
+        }
+        public async Task<RefreshToken> FindRefreshToken(string refreshTokenId)
+        {
+            return await _ctx.RefreshTokens.FindAsync(refreshTokenId);
+
+        }
+        public List<RefreshToken> GetAllRefreshTokens()
+        {
+            return _ctx.RefreshTokens.ToList();
         }
         public void Dispose()
         {
