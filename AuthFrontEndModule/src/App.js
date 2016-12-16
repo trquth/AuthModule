@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { LoginContainer } from "./modules/auth"
+import { ErrorPageContainer } from "./modules/common"
 
 class App extends Component {
   render() {
     return (
-      <LoginContainer />
+      <ErrorPageContainer />
     )
   }
 }
