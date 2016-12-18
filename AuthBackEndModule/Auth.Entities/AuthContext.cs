@@ -1,7 +1,6 @@
-﻿using Auth.Entities;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
-namespace Auth.Data
+namespace Auth.Entities
 {
     public partial class AuthContext : DbContext
     {

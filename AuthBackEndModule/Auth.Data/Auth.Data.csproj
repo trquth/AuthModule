@@ -49,15 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implement\BaseRepository.cs" />
-    <Compile Include="Implement\DataContext.cs" />
+    <Compile Include="AuthContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Auth.Core\Auth.Core.csproj">
-      <Project>{2c347a28-4dfb-4322-8196-c8915d3e8c69}</Project>
-      <Name>Auth.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Auth.Entities\Auth.Entities.csproj">
       <Project>{d23739de-9b3e-4ec2-98ec-3fc48840ff0e}</Project>
       <Name>Auth.Entities</Name>

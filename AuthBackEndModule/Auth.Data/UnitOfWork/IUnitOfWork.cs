@@ -1,4 +1,4 @@
-namespace Auth.Core.UnitOfWork
+namespace Auth.Data.UnitOfWork
 {
     public interface IUnitOfWork
     {
