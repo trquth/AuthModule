@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { withRouter } from 'react-router'
 import Login from "./../presenters/Login"
 
 class LoginContainer extends Component {
@@ -6,4 +7,4 @@ class LoginContainer extends Component {
         return <Login />
     }
 }
-export default LoginContainer
+export default withRouter(LoginContainer)

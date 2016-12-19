@@ -1,13 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 import { LoginContainer } from "./modules/auth"
 import { ErrorPageContainer } from "./modules/common"
 
 class App extends Component {
   render() {
-    return (
-      <ErrorPageContainer />
-    )
+    return <div>
+      {this.props.children}
+    </div>
   }
 }
 
-export default App;
+export default withRouter(App)
+
+// export default connect(state => {
+
+// }, dispatch => {
+
+// })(withRouter(App));
