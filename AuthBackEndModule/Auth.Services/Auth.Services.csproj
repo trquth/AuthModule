@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A506D3AD-0F3E-4D3B-B689-32842D59859A}</ProjectGuid>
+    <ProjectGuid>{B1D74DC7-46B5-4A5F-97CA-DB98EE3FE467}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Auth.Models</RootNamespace>
-    <AssemblyName>Auth.Models</AssemblyName>
+    <RootNamespace>Auth.Services</RootNamespace>
+    <AssemblyName>Auth.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,9 +43,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Auth.Entities\Auth.Entities.csproj">
-      <Project>{d23739de-9b3e-4ec2-98ec-3fc48840ff0e}</Project>
-      <Name>Auth.Entities</Name>
+    <ProjectReference Include="..\Auth.Models\Auth.Models.csproj">
+      <Project>{a506d3ad-0f3e-4d3b-b689-32842d59859a}</Project>
+      <Name>Auth.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
