@@ -27,8 +27,7 @@ export default function* watchLogin() {
 }
 
 function* login({userName, password}) {
-    debugger
-    let [data] = yield call(requestLogin, userName, password)
+    let [data] = yield call(requestLogin, userName,     )
     debugger
     if (data && data.access_token) {
         browserHistory.push('*')
