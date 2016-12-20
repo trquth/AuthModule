@@ -49,18 +49,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Auth.Core\Auth.Core.csproj">
+      <Project>{2c347a28-4dfb-4322-8196-c8915d3e8c69}</Project>
+      <Name>Auth.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Auth.Entities\Auth.Entities.csproj">
       <Project>{d23739de-9b3e-4ec2-98ec-3fc48840ff0e}</Project>
       <Name>Auth.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Auth.Repositories\Auth.Repositories.csproj">
+      <Project>{dc70941f-e326-4396-a9c5-23e5d4573967}</Project>
+      <Name>Auth.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

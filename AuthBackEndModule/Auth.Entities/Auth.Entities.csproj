@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthContext.cs" />
     <Compile Include="Clients.cs" />
     <Compile Include="RefreshTokens.cs" />
     <Compile Include="Users.cs" />

@@ -1,10 +1,6 @@
 ﻿using Auth.Core.Interfaces.Services;
-using Auth.Core.UnitOfWork;
+using Auth.Data.UnitOfWork;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Auth.Services
 {
@@ -17,7 +13,7 @@ namespace Auth.Services
         }
         public Guid Authenticate(string userName, string password)
         {
-            var user = _unitOfWork.UserRepository.Get(u => u.Username == userName && u.Password == password);
+            var user = _unitOfWork.UserRepository.SingleBy(u => u.Username == userName && u.Password == password);
             if (user != null)
             {
                 return user.Id;

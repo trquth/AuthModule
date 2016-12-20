@@ -182,12 +182,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Api\Controllers\" />
+    <Folder Include="Areas\Api\Models\" />
+    <Folder Include="Areas\Api\Views\Shared\" />
+    <Folder Include="Areas\Web\Models\" />
+    <Folder Include="Areas\Web\Views\Home\" />
+    <Folder Include="Areas\Web\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
@@ -216,6 +223,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Areas\Web\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Web\WebAreaRegistration.cs" />
     <Compile Include="AuthContext.cs" />
     <Compile Include="AuthRepository.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -263,6 +272,8 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Areas\Api\Views\web.config" />
+    <Content Include="Areas\Web\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -285,7 +296,28 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Auth.Core\Auth.Core.csproj">
+      <Project>{2c347a28-4dfb-4322-8196-c8915d3e8c69}</Project>
+      <Name>Auth.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Auth.Data\Auth.Data.csproj">
+      <Project>{c557849b-7f86-41c0-83a9-44072db26e63}</Project>
+      <Name>Auth.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Auth.Entities\Auth.Entities.csproj">
+      <Project>{d23739de-9b3e-4ec2-98ec-3fc48840ff0e}</Project>
+      <Name>Auth.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Auth.Models\Auth.Models.csproj">
+      <Project>{a506d3ad-0f3e-4d3b-b689-32842d59859a}</Project>
+      <Name>Auth.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Auth.Services\Auth.Services.csproj">
+      <Project>{b1d74dc7-46b5-4a5f-97ca-db98ee3fe467}</Project>
+      <Name>Auth.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
