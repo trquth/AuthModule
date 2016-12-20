@@ -1,10 +1,11 @@
 import {
-	REQUEST_LOGIN,
+	REQUEST_LOGIN,	
 	REQUEST_LOGIN_SUCCESS,
-	REQUEST_LOGIN_FAIL
+	REQUEST_LOGIN_FAIL,
+	REQEUST_LOGOUT,
 } from './../actions'
 
-export default function accounts(state = {}, action) {
+export default function account(state = {}, action) {
 	switch (action.type) {
 		case REQUEST_LOGIN:
 			return Object.assign({}, state, {
@@ -23,6 +24,10 @@ export default function accounts(state = {}, action) {
 			return Object.assign({}, state, {
 				status: 'fail'
 			})
+		case REQEUST_LOGOUT:
+			return {
+				status: 'init'
+			}
 		default:
 			return state
 	}

@@ -13,6 +13,5 @@ let ErrorPage = ({}) => {
             Design by - <a href="http://w3layouts.com">W3Layouts</a>
         </div>
     </div>
-
 }
 export default ErrorPage

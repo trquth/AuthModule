@@ -8,38 +8,31 @@ let Login = ({
     onChangePassword,
     onSubmitForm
 }) => {
-    return <div className="login-form">
-        <div className="head">
+    return <div>
+        <div className="main">
+            <h1>Rounded Flat User Login Form</h1>
+            <form onSubmit={(e) => onSubmitForm(e, userName, password)}>
+                <div className="input_form">
+                    <input type="text" value={userName} onChange={(e) => onChangeUserName(e)} />
+                    <input type="password" value={password} onChange={(e) => onChangePassword(e)} />
+                </div>
+                <div className="ckeck-bg">
+                    <div className="checkbox-form">
+                        <div className="check-left">
+                            <div className="check">
+                                <label className="checkbox"><input type="checkbox" name="checkbox" checked="" /><i> </i>Remember my Password</label>
+                            </div>
+                        </div>
+                        <div className="check-right">
+                            <input type="submit" value="Login" />
+                        </div>
+                        <div className="clearfix"></div>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div className="head-info">
-            <h1>Sign up in seconds</h1>
-        </div>
-        <form onSubmit={(e) => onSubmitForm(e, userName, password)}>
-            <li>
-                <input type="text" onChange={(e) => onChangeUserName(e)} className="text"  value={userName} placeholder="User Name" /><a href="#" className=" icon user"></a>
-            </li>
-            <li>
-                <input type="password" onChange={(e) => onChangePassword(e)}  value={password} placeholder="Password" /><a href="#" className=" icon lock"></a>
-            </li>
-            <div className="p-container">
-                <input type="submit" defaultValue="Sign me up!" />
-                <div className="clear"> </div>
-            </div>
-        </form>
-        <div className="social-icons">
-            <p>..or you can skip that and sign up via</p>
-            <a href="#"><ul className="facebook">
-                <li><img src={require('./../../../contents/images/fb.png')} /></li>
-                <li>Connect</li>
-            </ul></a>
-            <a href="#"><ul className="twitter">
-                <li><img src={require('./../../../contents/images/tw.png')} /></li>
-                <li>Connect</li>
-            </ul></a>
-            <div className="clear"> </div>
-        </div>
-        <div className="copy-right">
-            <p>Template by <a href="http://w3layouts.com">w3layouts</a></p>
+        <div className="footer">
+            <p>&copy 2016 Rounded Flat User Login Form. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts.</a></p>
         </div>
     </div>
 }
